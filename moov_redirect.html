@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionamento Moov App</title>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=br.mobilibus.moov&pcampaignid=web_share";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/br/app/moov/id6443475953";
+            } else {
+                document.getElementById("info").style.display = 'block';
+            }
+        };
+    </script>
+</head>
+<body>
+    <p id="info" style="display:none;">
+        Não foi possível identificar seu dispositivo. Acesse:
+        <br>
+        <a href="https://play.google.com/store/apps/details?id=br.mobilibus.moov">Android</a> |
+        <a href="https://apps.apple.com/br/app/moov/id6443475953">iOS</a>
+    </p>
+</body>
+</html>
